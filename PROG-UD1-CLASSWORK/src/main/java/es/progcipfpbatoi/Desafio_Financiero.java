@@ -2,6 +2,7 @@ package es.progcipfpbatoi;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.Temporal;
 
 public class Desafio_Financiero {
@@ -15,12 +16,15 @@ public class Desafio_Financiero {
         System.out.println("Conversion de moneda y calculo de intereses");
 
         double euros = DOLARES * TASA_CAMBIO;
-        
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE, dd 'de' MMMM 'del' yyyy");
+        System.out.println("Fecha actual: " + LocalDate.now().format(formatter));
+
         System.out.println("Cantidad en dolares: " + DOLARES);
         System.out.println("Tipo de cambio (USD A EUR): " + (TASA_CAMBIO * 100) + "%");
         System.out.println("Cantidad en euros: " + euros);
-        System.out.println("Fecha de inicio: " + FECHA_INICIO);
-        System.out.println("Fecha de fin: " + FECHA_FIN);
+        System.out.println("Fecha incio: " + FECHA_INICIO.format(formatter));
+        System.out.println("Fecha de fin: " + FECHA_FIN.format(formatter));
         System.out.println("");
 
 
